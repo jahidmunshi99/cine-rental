@@ -1,13 +1,11 @@
 import { useState } from "react";
-import CartDetails from "../../Components/CartDetails";
-import MovieCard from "../../Components/MovieCard";
-import MovieInfoMadal from "../../Components/MovieInfoMadal";
+import MovieCard from "../../Cine/MovieCard";
 import movieList from "../../data/index.js";
+import MovieInfoMadal from "../MovieInfoMadal/index.jsx";
 
-const MoveList = ({ showCartInfo, onCartclose }) => {
+const MoveList = () => {
   const movies = movieList();
 
-  console.log(movies);
   const [showModal, setShowModal] = useState(false);
 
   const handleClickClose = () => {
@@ -19,7 +17,6 @@ const MoveList = ({ showCartInfo, onCartclose }) => {
   };
   return (
     <div className="content">
-      {showCartInfo && <CartDetails onCartclose={onCartclose} />}
       {showModal && <MovieInfoMadal onClose={handleClickClose} />}
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-7">
         {movies.map((movie) => (

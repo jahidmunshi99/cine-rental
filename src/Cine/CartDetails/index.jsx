@@ -1,7 +1,7 @@
 import cartItemLogo from "../../assets/cart-item.png";
 import DeleteLogo from "../../assets/delete.svg";
 import checkOutLogo from "../../assets/icons/checkout.svg";
-const CartDetails = ({ onCartclose }) => {
+const CartDetails = ({ onclose }) => {
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[790px] p-4 max-h-[90vh] overflow-auto">
@@ -45,7 +45,7 @@ const CartDetails = ({ onCartclose }) => {
               className="border border-[#74766F] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#6F6F6F] dark:text-gray-200 font-semibold text-sm"
               href="#"
               onClick={() => {
-                onCartclose();
+                onclose();
               }}
             >
               Cancel

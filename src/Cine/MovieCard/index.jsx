@@ -1,6 +1,6 @@
 import Star from "../../assets/star.svg";
+import Ratting from "../../Components/Rattings";
 import { getImgUrl } from "../../util";
-import Ratting from "../Rattings";
 const MovieCard = ({ onMovieInfo, movie }) => {
   const rattings = Array(movie).fill(Star);
   console.log(rattings);
@@ -11,7 +11,10 @@ const MovieCard = ({ onMovieInfo, movie }) => {
         onMovieInfo();
       }}
     >
-      <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
+      <figure
+        key={movie.id}
+        className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl"
+      >
         <img
           className="w-full object-cover"
           src={getImgUrl(movie.cover)}
