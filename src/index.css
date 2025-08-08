@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@layer components {
+  .custom-container {
+    margin: auto;
+    padding: 1.25rem; /* 20px */
+  }
+
+  .container {
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .text-primary {
+    color: rgb(5, 227, 153);
+  }
+
+  .bg-primary {
+    background-color: rgb(5, 227, 153);
+  }
+
+  .dark {
+    @apply bg-[#171923] text-white;
+  }
+}
