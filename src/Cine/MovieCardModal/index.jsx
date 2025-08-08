@@ -11,7 +11,7 @@ const MovieCardModal = ({ onModalClose, movie, onAddToCard }) => {
             src={getImgUrl(movie.cover)}
             alt=""
           />
-          <div className="p-5 lg:p-11">
+          <div className="p-5 lg:p-11 text-black">
             <div className="">
               <h2 className="text-3xl lg:text-[50px] mb-2 font-bold">
                 {movie.title}

@@ -1,4 +1,6 @@
 import { useContext, useState } from "react";
+import toast from "react-hot-toast";
+
 import { MovieContext } from "../context/index.js";
 import { getAllMovies } from "../data/index.js";
 import MoveCard from "./MovieCard";
@@ -16,9 +18,13 @@ const MovieList = () => {
     const checkDuplication = cartData.find((item) => item.id == movie.id);
     if (!checkDuplication) {
       setCartData([...cartData, movie]);
+      toast.success(`The ${movie.title} Has bean Successfully Added!`, {
+        position: "top-center",
+      });
     } else {
-      alert(`The Move ${movie.title} is already Added to Cart`);
-      console.error(`The Move ${movie.title} is already Added to Cart`);
+      toast.error(`The ${movie.title} Added in Cart Already!`, {
+        position: "top-center",
+      });
     }
   };
 
@@ -26,9 +32,13 @@ const MovieList = () => {
     const checkDuplication = cartData.find((item) => item.id == movie.id);
     if (!checkDuplication) {
       setCartData([...cartData, movie]);
+      toast.success(`The ${movie.title} Has bean Successfully Added!`, {
+        position: "top-center",
+      });
     } else {
-      alert(`The Move ${movie.title} is already Added to Cart`);
-      console.error(`The Move ${movie.title} is already Added to Cart`);
+      toast.error(`The ${movie.title} Added in Cart Already!`, {
+        position: "top-center",
+      });
     }
 
     setShowModal(false);

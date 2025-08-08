@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import toast from "react-hot-toast";
 import { MovieContext } from "../../context/index.js";
 import { getImgUrl } from "../../utils/cine-utility.js";
 import { Checkout, Delete } from "../../utils/logo-utitily.js";
@@ -10,6 +11,9 @@ const Cart = ({ onCartClose }) => {
   const handleRemoveMove = (movie) => {
     const removeMovie = cartData.filter((item) => item.id !== movie.id);
     setCartData(removeMovie);
+    toast.success(`The ${movie.title} Has bean Successfully Removed!`, {
+      position: "top-center",
+    });
   };
 
   return (
@@ -66,7 +70,9 @@ const Cart = ({ onCartClose }) => {
           ) : (
             <div className="mb-8 text-center">
               <span className="text-red-500 text-3xl">Opps!</span>
-              <div className="my-4">No Items Added Yet, Please Add your</div>
+              <div className="my-4 text-black text-2xl">
+                No Items Added Yet, Please Add Movies!
+              </div>
             </div>
           )}
 
